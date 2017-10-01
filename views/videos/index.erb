@@ -1,0 +1,10 @@
+<h2><%= @page_header %></h2>
+
+<% @memes.each do |video| %>
+
+<h3><%= video.title %></h3>
+<p> <%= video.description %></p>
+<p>(Genre: <%= video.genre %>)</p>
+<a href="/videos/<%= video.id %>">Watch Video</a>
+
+<% end %>

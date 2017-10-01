@@ -1,4 +1,4 @@
-class Meme
+class Video
 
 	attr_accessor :id, :title, :description, :url, :genre
 
@@ -25,7 +25,7 @@ class Meme
 
 	def self.hydrate meme_data
 
-		meme = Meme.new
+		meme = Video.new
 		meme.id = meme_data['id']
 		meme.title = meme_data['title']
 		meme.description = meme_data['description']
@@ -53,7 +53,7 @@ class Meme
 	#create & update
 
 	def save
-		conn = Meme.open_connection
+		conn = Video.open_connection
 
 		if (!self.id)
 			sql = "INSERT INTO meme (title, description, url, genre) VALUES ('#{self.title}', '#{self.description}', '#{self.url}', '#{self.genre}')"

@@ -1,9 +1,9 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 require "pg"
-require_relative "./controllers/meme_controller.rb"
-require_relative "./models/Memes.rb"
+require_relative "./controllers/video_controller.rb"
+require_relative "./models/Videos.rb"
 
 use Rack::MethodOverride
 
-run MemeController
+run VideoController

@@ -1,4 +1,4 @@
-class MemeController < Sinatra::Base
+class VideoController < Sinatra::Base
 
 	configure :development do 
 		register Sinatra::Reloader
@@ -10,50 +10,50 @@ class MemeController < Sinatra::Base
 	#Sets location of views
 	set :views, Proc.new { File.join(root, 'views') }
 
-	get '/memes' do
+	get '/videos' do
 		@page_header = "All meme videos"
-		@memes = Meme.all
-		erb :"memes/index"
+		@memes = Video.all
+		erb :"videos/index"
 	end	
 
-	get '/memes/new' do
-		erb :"memes/new"
+	get '/videos/new' do
+		erb :"videos/new"
 	end
 
-	get '/memes/:id' do
+	get '/videos/:id' do
 		id = params[:id].to_i
-		@meme = Meme.find id
-		erb :"memes/show"
+		@meme = Video.find id
+		erb :"videos/show"
 	end
 
-	post "/memes" do
-		new_meme = Meme.new
+	post "/videos" do
+		new_meme = Video.new
 		new_meme.title = params[:title]
 		new_meme.description = params[:description]
 		new_meme.url = params[:url]
 		new_meme.genre = params[:genre]
 		new_meme.save
-		redirect "/memes"
+		redirect "/videos"
 	end
 
-	get '/memes/:id/edit' do
-		@post = Meme.find(params[:id])
-		erb :"memes/edit"
+	get '/videos/:id/edit' do
+		@meme = Video.find(params[:id])
+		erb :"videos/edit"
 	end
 
-	put "/memes/:id" do
-		meme = Meme.find(params[:id])
+	put "/videos/:id" do
+		meme = Video.find(params[:id])
 		meme.title = params[:title]
 		meme.description = params[:description]
 		meme.url = params[:url]
 		meme.genre = params[:genre]
 		meme.save
-		redirect "/memes/#{meme.id}"
+		redirect "/videos/#{meme.id}"
 	end
 
-	delete "/memes/:id" do
-		Meme.destroy(params[:id])
-		redirect "/memes"
+	delete "/videos/:id" do
+		Video.destroy(params[:id])
+		redirect "/videos"
 	end
 
 end
