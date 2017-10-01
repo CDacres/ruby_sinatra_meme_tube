@@ -44,7 +44,7 @@ class Video
 		sql = "SELECT * FROM meme WHERE id = #{id}"
 		memes = conn.exec(sql)
 
-		memes = self.hydrate memes[0]
+		meme = self.hydrate memes[0]
 
 		meme
 
