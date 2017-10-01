@@ -9,5 +9,5 @@
 <a href="/videos/<%= @meme.id %>/edit">Edit</a>
 <form action="/videos/<%= @meme.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
-	<input type="submit" value="Delete">
+	<input type="submit" value="Delete" id="delete">
 </form>
