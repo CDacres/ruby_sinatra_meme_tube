@@ -3,10 +3,7 @@
 <iframe width="640" height="360" src="<%= @meme.url %>"></iframe>
 <p> <%= @meme.description %></p>
 <p>(Genre: <%= @meme.genre %>)</p>
-<a href="/videos">Return to Homepage</a>
-<br>
-<br>
-<a href="/videos/<%= @meme.id %>/edit">Edit</a>
+<a href="/videos/<%= @meme.id %>/edit" class="link">Edit</a>
 <form action="/videos/<%= @meme.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="submit" value="Delete" id="delete">

@@ -1,6 +1,6 @@
 <h2><%= @page_header %></h2>
 
-<a href="/videos/new">Add a meme video</a>
+<a href="/videos/new" class="add">Add a meme video</a>
 <br>
 
 <% @memes.each do |video| %>
@@ -8,6 +8,6 @@
 <h3><%= video.title %></h3>
 <p> <%= video.description %></p>
 <p>(Genre: <%= video.genre %>)</p>
-<a href="/videos/<%= video.id %>">Watch Video</a>
+<a href="/videos/<%= video.id %>" class="link">Watch/Edit Video</a>
 
 <% end %>

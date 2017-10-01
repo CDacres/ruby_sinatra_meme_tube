@@ -1,14 +1,15 @@
 body {
-	font-family: helvetica, sans-serif;
+	font-family: 'Paytone One', sans-serif;
 	background-image: url("../images/background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: #a3bfff;
 }
 
-h1 {
+#logo {
 	font-size: 45px;
 	text-shadow: 2px 2px 4px #000000;
+	color: #a3bfff;
 }
 
 h2 {
@@ -24,8 +25,19 @@ p {
 }
 
 a {
+	text-decoration: none;
+}
+
+.link {
 	color: #2a577f;
     background-color: #47a2f3;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.add {
+	background-color: #2a577f;
+    color: #47a2f3;
     padding: 5px;
     border-radius: 5px;
 }
@@ -37,5 +49,5 @@ a {
     border-radius: 5px;
     margin: 10px 0px;
     font-size: 16px;
-    text-decoration: underline;
+    font-family: 'Paytone One', sans-serif;
 }
